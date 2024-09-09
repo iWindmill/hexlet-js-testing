@@ -1,3 +1,4 @@
+// Exercise for Lesson #3
 // Write tests for the function take(items, n)
 // The function returns the first n items from an array
 // By default, n is equal to 1
