@@ -12,18 +12,22 @@
 
 import _ from 'lodash';
 
-import { getFunction } from '../src/functionsForSet.js';
+import functions from '../src/functionsForSet.js';
 
-const set = getFunction();
+const set = functions();
 
 // Solution 1. Don't work
 // BEGIN (write your solution here)
 
-test("set's main flow", () => {
-    const object = { a: [{ b: { c: 3 } }] };
-    set(object, 'a[0].b.c', 4);
+let object;
 
-    expect(console.log(set)).deepEqual(4);
+beforeEach(() => {
+    const object = { a: [{ b: { c: 3 } }] };
+});
+
+test("set's main flow", () => {
+    set(object, 'a[0].b.c', 4);
+    expect(console.log(object.a[0].b.c)).deepEqual(4);
 });
 
 // ENDs

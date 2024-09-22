@@ -3,7 +3,7 @@
 
 import _ from 'lodash';
 
-export const getFunction = {
+export const functions = {
   right1: _.set,
   wrong1: (obj, path, value) => {
     _.set(obj, path, value);
@@ -24,5 +24,5 @@ export const getFunction = {
 
 export default () => {
   const name = process.env.FUNCTION_VERSION || 'right1';
-  return getFunction[name];
+  return functions[name];
 };
